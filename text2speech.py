@@ -4,21 +4,23 @@ Created on Thu Jan  7 14:17:00 2021
 
 @author: Bec
 """
-   
-def text2speech(string):
-    import site
-    site.addsitedir('C:\\Users\\rebecca.haskmann\\AppData\\Local\\Programs\\Python\\Python37\\Lib\\site-packages')
+import site
+def text2speech(string, LANG):
+
+    # site.addsitedir('C:\\Program Files\\Python311\\Lib\\site-packages')
     from gtts import gTTS
-    tts = gTTS(string, lang="en")
+    tts = gTTS(string, lang=LANG)
     from tempfile import TemporaryDirectory
     with TemporaryDirectory() as tempdir:
         print(tempdir)
         path = tempdir + '\\'+string + ".mp3"
         tts.save(path)
-        import acoustid
-        fprint = acoustid.fingerprint_file(path)
-        return fprint
+        print(path)
+    return path
+    # import acoustid
+    # fprint = acoustid.fingerprint_file(path)
+    # return fprint
 
 
-        
+text2speech("bonjour", "fr")
         

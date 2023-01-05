@@ -5,6 +5,8 @@ Created on Thu Jan  7 06:35:30 2021
 @author: Bec
 """
 
+from pyjarowinkler import distance
+
 def phonsim (string1, string2):
     
     '''
@@ -20,7 +22,7 @@ def phonsim (string1, string2):
     similarity index as float.
 
     '''
-    from pyjarowinkler import distance 
+
    
     string1 = string1.lower()
     string2 = string2.lower()
